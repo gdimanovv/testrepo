@@ -9,7 +9,9 @@ jobs:
     steps:
       - name: TEST
         if: ${{ env.NO_VARIABLE == null }}
-        run: exit 1
+        uses: actions/github-script@v3
+        with:
+            script: core.setFailed('some failure reason')
       - run: echo "🍏 This job's status is ${{ job.status }}."
   warn_on_fail:
     runs-on: ubuntu-latest
