@@ -7,6 +7,8 @@ jobs:
   explore_actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Check
+        run: echo "${GITHUB_WORKSPACE}"
       - name: TEST
         if: ${{ env.NO_VARIABLE == null }}
         uses: actions/github-script@v3
