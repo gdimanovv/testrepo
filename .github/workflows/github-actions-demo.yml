@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: TEST
-        if: ${{ env.NO_VARIABLE }}
+        if: ${{ env.NO_VARIABLE == '' }}
         run: |
           echo ${{ env }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
