@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: TEST
-        if: {{ false }}
+        if: {{ env.NO_VARIABLE }}
         run: |
           echo ${{ env }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
