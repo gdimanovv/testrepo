@@ -15,7 +15,7 @@ jobs:
   warn_on_fail:
     runs-on: ubuntu-latest
     needs: explore_actions
-    if: ${{ failure }}
+    if: ${{ failure() }}
     steps:
       - name: TEST
         run: |
