@@ -25,6 +25,6 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{github.token}}
+          token: ${{secrets.deploy_key}}
           commit-message: Update dependencies
           title: Update Dependencies
