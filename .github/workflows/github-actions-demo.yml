@@ -1,25 +1,25 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-env:
-  NO_VARIABLEl: 55
-on: [push]
-jobs:
-  explore_actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check
-        run: echo "${{ github.event.repository.name }}"
-      - name: TEST
-        if: ${{ env.NO_VARIABLE == null }}
-        uses: actions/github-script@v3
-        with:
-            script: core.setFailed('some failure reason')
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-  warn_on_fail:
-    runs-on: ubuntu-latest
-    needs: explore_actions
-    if: ${{ failure() }}
-    steps:
-      - name: TEST
-        run: |
-          echo "FAILED"
+# name: GitHub Actions Demo
+# run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+# env:
+#   NO_VARIABLEl: 55
+# on: [push]
+# jobs:
+#   explore_actions:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Check
+#         run: echo "${{ github.event.repository.name }}"
+#       - name: TEST
+#         if: ${{ env.NO_VARIABLE == null }}
+#         uses: actions/github-script@v3
+#         with:
+#             script: core.setFailed('some failure reason')
+#       - run: echo "🍏 This job's status is ${{ job.status }}."
+#   warn_on_fail:
+#     runs-on: ubuntu-latest
+#     needs: explore_actions
+#     if: ${{ failure() }}
+#     steps:
+#       - name: TEST
+#         run: |
+#           echo "FAILED"
