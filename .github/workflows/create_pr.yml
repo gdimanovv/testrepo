@@ -28,3 +28,4 @@ jobs:
           ssh-key: ${{secrets.deploy_key}}
           commit-message: Update dependencies
           title: Update Dependencies
+          branch-suffix: random
