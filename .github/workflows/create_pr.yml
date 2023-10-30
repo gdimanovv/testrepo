@@ -22,4 +22,3 @@ jobs:
         with:
           commit-message: Update dependencies
           title: Update Dependencies
-          branch-suffix: random
