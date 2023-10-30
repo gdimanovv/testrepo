@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          ssh-key: ${{secrets.deploy_key}}
 
       - name: Run a one-line script
         run: date >> file.txt
@@ -20,7 +22,6 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v3
         with:
-          ssh-key: ${{secrets.deploy_key}}
           commit-message: Update dependencies
           title: Update Dependencies
           branch-suffix: random
