@@ -20,5 +20,5 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update dependencies
-          title: Update Dependencies
+          commit-message: Update dependencies V2
+          title: Update Dependencies V2
