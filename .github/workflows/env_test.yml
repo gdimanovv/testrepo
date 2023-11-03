@@ -9,8 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     outputs:
-      pip_index_url: ${{ steps.set_env.pip_index_url }}
-      pip_index_url2: ${{ steps.set_env2.pip_index_url2 }}
+      pip_index_url: ${{ steps.set_env.outputs.pip_index_url }}
+      pip_index_url2: ${{ steps.set_env2.outputs.pip_index_url2 }}
       
 
     steps:
