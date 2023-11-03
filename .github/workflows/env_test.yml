@@ -8,30 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      pip_index_url: ${{ steps.set_env.outputs.pip_index_url }}
-      pip_index_url2: ${{ steps.set_env2.outputs.pip_index_url2 }}
-      
-
     steps:
       - name: set_env
         id: set_env
-        run: echo "pip_index_url=${{secrets.NEW_SECRET_2}}" >> $GITHUB_OUTPUT
+        run: echo "pip_index_url=${{secrets.NEW_SECRET_2}}" >> $GITHUB_ENV
 
-      - name: set_env2
-        id: set_env2
-        run: echo "pip_index_url2=mysecret" >> $GITHUB_OUTPUT
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: set_index
-        run: echo "PIP_INDEX_URL=${{needs.build.outputs.pip_index_url}}" >> $GITHUB_ENV
-        
-      - name: set_index2
-        run: echo "PIP_INDEX_URL2=${{needs.build.outputs.pip_index_url2}}" >> $GITHUB_ENV
-        
-      - name: print_all
-        run: set
+      - name: pipinstall
+        run: pip install -r requirements.txt
