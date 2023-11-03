@@ -5,30 +5,23 @@ name: Create PR
 on:
   workflow_dispatch:
 
-env:
-  PIP_INDEX_URL_GLOBAL: "tes123"
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      pip_index_url: ${{ steps.set_env.pip_index_url }}
 
     steps:
       - name: set_env
-        run: echo "PIP_INDEX_URL=SomeValue" >> $GITHUB_ENV
-
-      - name: get_env
-        run: echo ${{ env.PIP_INDEX_URL }}
-
-      - name: get_env
-        run: echo ${{ env.PIP_INDEX_URL_GLOBAL }}
-        
-      - name: print_all
-        run: set
+        run: echo "pip_index_url=${{secreats.DEPLOY_KEY}}" >> $GITHUB_OUTPUT
 
   test:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
+      - name: set_index
+        run: echo "PIP_INDEX_URL=${{needs.build.outputs.pip_index_url}}" >> $GITHUB_ENV
+        
       - name: print_all
         run: set
