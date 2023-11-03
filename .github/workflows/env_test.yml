@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: set_env
-        run: echo "pip_index_url=${{secrets.NEW_SECRET}}" >> $GITHUB_OUTPUT
+        run: echo "pip_index_url=${{secrets.NEW_SECRET_2}}" >> $GITHUB_OUTPUT
 
   test:
     needs: build
