@@ -30,8 +30,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: set_env
-        run: echo "PIP_INDEX_URL=SomeValue" >> $GITHUB_ENV
-        
       - name: print_all
         run: set
