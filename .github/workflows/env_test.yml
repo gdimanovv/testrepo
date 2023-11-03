@@ -18,3 +18,12 @@ jobs:
 
       - name: get_env
         run: echo ${{ env.PIP_INDEX_URL }}
+
+      - name: get_env
+        run: echo ${{ env.PIP_INDEX_URL_GLOBAL }}
+        
+      - name: print_all
+        run: set
+
+      - name: print_context
+        run: echo "$GITHUB_CONTEXT"
