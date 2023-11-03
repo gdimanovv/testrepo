@@ -10,14 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       pip_index_url: ${{ steps.set_env.pip_index_url }}
-      pip_index_url2: ${{ steps.set_env.pip_index_url2 }}
+      pip_index_url2: ${{ steps.set_env2.pip_index_url2 }}
       
 
     steps:
       - name: set_env
+        id: set_env
         run: echo "pip_index_url=${{secrets.NEW_SECRET_2}}" >> $GITHUB_OUTPUT
 
       - name: set_env2
+        id: set_env2
         run: echo "pip_index_url2=mysecret" >> $GITHUB_OUTPUT
 
   test:
