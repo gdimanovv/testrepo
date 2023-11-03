@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
       - name: set_env
         id: set_env
-        run: echo "pip_index_url=${{secrets.NEW_SECRET_2}}" >> $GITHUB_ENV
+        run: echo "PIP_INDEX_URL=${{secrets.NEW_SECRET_2}}" >> $GITHUB_ENV
 
       - name: pipinstall
         run: pip install -r requirements.txt
