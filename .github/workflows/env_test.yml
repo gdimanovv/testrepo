@@ -5,13 +5,16 @@ name: Create PR
 on:
   workflow_dispatch:
 
+env:
+  PIP_INDEX_URL_GLOBAL: "tes123"
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: set_env
-        run: echo "MYVAR=SomeValue" >> $GITHUB_ENV
+        run: echo "PIP_INDEX_URL=SomeValue" >> $GITHUB_ENV
 
       - name: get_env
-        run: echo ${{ env.MYVAR }}
+        run: echo ${{ env.PIP_INDEX_URL }}
