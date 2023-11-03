@@ -25,5 +25,13 @@ jobs:
       - name: print_all
         run: set
 
-      - name: print_context
-        run: echo "$GITHUB_CONTEXT"
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: set_env
+        run: echo "PIP_INDEX_URL=SomeValue" >> $GITHUB_ENV
+        
+      - name: print_all
+        run: set
