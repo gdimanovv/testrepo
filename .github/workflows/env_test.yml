@@ -28,7 +28,7 @@ jobs:
       - name: set_index
         run: echo "PIP_INDEX_URL=${{needs.build.outputs.pip_index_url}}" >> $GITHUB_ENV
         
-       - name: set_index2
+      - name: set_index2
         run: echo "PIP_INDEX_URL2=${{needs.build.outputs.pip_index_url2}}" >> $GITHUB_ENV
         
       - name: print_all
