@@ -1,4 +1,4 @@
-name: test_old
+name: on_release
 
 on:
   push:
