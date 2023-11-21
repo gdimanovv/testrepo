@@ -1,0 +1,16 @@
+name: on_release
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gen tag
+        id: gen_tag
+        run: |
+          VERSION=`git describe --tags --abbrev=0 | awk -F. '{OFS="."; $NF+=1; print $0}'`
+          echo "new_tag=${VERSION}" >> $GITHUB_OUTPUT
+      - name: Release
+        run: echo "test"
