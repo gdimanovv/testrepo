@@ -10,9 +10,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Gen tag
-        id: gen_tag
-        run: |
-          VERSION=`git describe --tags --abbrev=0 | awk -F. '{OFS="."; $NF+=1; print $0}'`
       - name: Release
-        run: echo "test"
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v1.0.2"
+          body: "yes"
