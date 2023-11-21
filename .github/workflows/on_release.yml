@@ -1,9 +1,10 @@
 name: on_release
 
 on:
-  push:
-    tags:
-      - "v*"
+  release:
+  # push:
+  #   tags:
+  #     - "v*"
 jobs:
   build:
     runs-on: ubuntu-latest
