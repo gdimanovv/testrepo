@@ -15,5 +15,6 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
+          ssh-key: ${{secrets.deploy_key}}
           tag_name: "v1.0.6"
           body: "yes"
