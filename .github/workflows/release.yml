@@ -14,8 +14,6 @@ jobs:
         
       - name: Release
         uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{secrets.deploy_key}}
         with:
-          tag_name: "v1.0.5"
+          tag_name: "v1.0.6"
           body: "yes"
