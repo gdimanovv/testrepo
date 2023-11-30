@@ -14,11 +14,11 @@ jobs:
       
       - name: Update tag
         run: |
-          git tag "v1.0.15"
-          git push origin "v1.0.15"
+          git tag "v1.0.23"
+          git push origin "v1.0.23"
       
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: "v1.0.15"
+          tag_name: "v1.0.23"
           body: "yes"
