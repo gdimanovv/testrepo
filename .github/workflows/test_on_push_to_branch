@@ -1,0 +1,11 @@
+name: Test on custom branch push
+on:
+  push:
+    branch:
+      - 'test_push_branch'
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "echo"
+        run: echo "hello"
