@@ -2,7 +2,7 @@ name: Test on custom branch push
 on:
   push:
     branches:
-      - 'test_push_branch'
+      - test_push_branch
 jobs:
   main:
     runs-on: ubuntu-latest
