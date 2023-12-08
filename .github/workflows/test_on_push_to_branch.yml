@@ -2,7 +2,7 @@ name: Test on custom branch push
 on:
   push:
     branches:
-      - "custom_branch_name"
+      - "custom_branch_name**"
   
 jobs:
   main:
