@@ -22,3 +22,5 @@ jobs:
         with:
           commit-message: Update dependencies V2
           title: Update Dependencies V2
+          branch: custom_branch_name
+          branch-suffix: random
