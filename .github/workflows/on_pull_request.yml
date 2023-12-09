@@ -1,6 +1,10 @@
 name: Test on pull request
 on:
   pull_request:
+  push:
+    branches:
+      - "custom_branch_name**"
+
 
 jobs:
   main:
